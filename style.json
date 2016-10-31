@@ -5,11 +5,11 @@
         "mapbox:type": "template",
         "mapbox:groups": {
             "1444849364238.8171": {
-                "collapsed": true,
+                "collapsed": false,
                 "name": "Buildings"
             },
             "1444849354174.1904": {
-                "collapsed": true,
+                "collapsed": false,
                 "name": "Tunnels"
             },
             "1444849388993.3071": {
@@ -29,21 +29,17 @@
                 "name": "Roads"
             },
             "1444849334699.1902": {
-                "collapsed": true,
-                "name": "Bridges"
-            },
-            "1444849297111.495": {
                 "collapsed": false,
-                "name": "POI labels"
+                "name": "Bridges"
             }
         },
         "mapbox:autocomposite": true
     },
     "center": [
-        8.342459958383046,
-        46.875699352504
+        8.541380398789414,
+        47.34792773131045
     ],
-    "zoom": 7.6508954471869295,
+    "zoom": 12.731738179587868,
     "bearing": 0,
     "pitch": 0,
     "sources": {
@@ -95,6 +91,24 @@
                         ]
                     ]
                 }
+            }
+        },
+        {
+            "id": "landuse-residential",
+            "type": "fill",
+            "metadata": {
+                "mapbox:group": "1444849388993.3071"
+            },
+            "source": "composite",
+            "source-layer": "landuse",
+            "interactive": true,
+            "filter": [
+                "==",
+                "class",
+                "residential"
+            ],
+            "paint": {
+                "fill-color": "hsla(30, 19%, 90%, 0.4)"
             }
         },
         {
@@ -501,7 +515,7 @@
                 "all",
                 [
                     "==",
-                    "class",
+                    "subclass",
                     "motorway_link"
                 ],
                 [
@@ -770,15 +784,15 @@
                 "all",
                 [
                     "in",
-                    "class",
-                    "primary",
-                    "trunk"
-                ],
-                [
-                    "in",
                     "properties",
                     "tunnel",
                     "tunnel:oneway"
+                ],
+                [
+                    "in",
+                    "subclass",
+                    "primary",
+                    "trunk"
                 ]
             ],
             "layout": {
@@ -866,7 +880,7 @@
             }
         },
         {
-            "id": "tunnel-path-pedestrian",
+            "id": "tunnel-path",
             "type": "line",
             "metadata": {
                 "mapbox:group": "1444849354174.1904"
@@ -885,14 +899,14 @@
                     "all",
                     [
                         "==",
-                        "structure",
-                        "tunnel"
+                        "class",
+                        "path"
                     ],
                     [
                         "in",
-                        "class",
-                        "path",
-                        "pedestrian"
+                        "properties",
+                        "tunnel",
+                        "tunnel:oneway"
                     ]
                 ]
             ],
@@ -919,11 +933,31 @@
         },
         {
             "id": "tunnel-motorway-link",
+            "type": "line",
             "metadata": {
                 "mapbox:group": "1444849354174.1904"
             },
-            "ref": "tunnel-motorway-link-casing",
+            "source": "composite",
+            "source-layer": "highway",
             "interactive": true,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "class",
+                    "motorway_link"
+                ],
+                [
+                    "in",
+                    "properties",
+                    "tunnel",
+                    "tunnel:oneway"
+                ]
+            ],
+            "layout": {
+                "line-join": "round",
+                "visibility": "visible"
+            },
             "paint": {
                 "line-color": "#fc8",
                 "line-width": {
@@ -951,11 +985,31 @@
         },
         {
             "id": "tunnel-service-track",
+            "type": "line",
             "metadata": {
                 "mapbox:group": "1444849354174.1904"
             },
-            "ref": "tunnel-service-track-casing",
+            "source": "composite",
+            "source-layer": "highway",
             "interactive": true,
+            "filter": [
+                "all",
+                [
+                    "in",
+                    "properties",
+                    "tunnel",
+                    "tunnel:oneway"
+                ],
+                [
+                    "in",
+                    "subclass",
+                    "service",
+                    "track"
+                ]
+            ],
+            "layout": {
+                "line-join": "round"
+            },
             "paint": {
                 "line-color": "#fff",
                 "line-width": {
@@ -979,11 +1033,33 @@
         },
         {
             "id": "tunnel-link",
+            "type": "line",
             "metadata": {
                 "mapbox:group": "1444849354174.1904"
             },
-            "ref": "tunnel-link-casing",
+            "source": "composite",
+            "source-layer": "highway",
             "interactive": true,
+            "filter": [
+                "all",
+                [
+                    "in",
+                    "properties",
+                    "tunnel",
+                    "tunnel:oneway"
+                ],
+                [
+                    "in",
+                    "subclass",
+                    "primary_link",
+                    "secondary_link",
+                    "tertiary_link",
+                    "trunk_link"
+                ]
+            ],
+            "layout": {
+                "line-join": "round"
+            },
             "paint": {
                 "line-color": "#fff4c6",
                 "line-width": {
@@ -1088,31 +1164,11 @@
         },
         {
             "id": "tunnel-trunk-primary",
-            "type": "line",
             "metadata": {
                 "mapbox:group": "1444849354174.1904"
             },
-            "source": "composite",
-            "source-layer": "highway",
+            "ref": "tunnel-trunk-primary-casing",
             "interactive": true,
-            "filter": [
-                "all",
-                [
-                    "in",
-                    "properties",
-                    "tunnel",
-                    "tunnel:oneway"
-                ],
-                [
-                    "in",
-                    "subclass",
-                    "primary",
-                    "trunk"
-                ]
-            ],
-            "layout": {
-                "line-join": "round"
-            },
             "paint": {
                 "line-color": "#fff4c6",
                 "line-width": {
@@ -1330,9 +1386,12 @@
                     "tunnel:oneway"
                 ],
                 [
-                    "==",
-                    "class",
-                    "link"
+                    "in",
+                    "subclass",
+                    "primary_link",
+                    "secondary_link",
+                    "tertiary_link",
+                    "trunk_link"
                 ]
             ],
             "layout": {
@@ -1566,7 +1625,7 @@
                 ],
                 [
                     "==",
-                    "class",
+                    "subclass",
                     "motorway"
                 ]
             ],
@@ -1656,11 +1715,34 @@
         },
         {
             "id": "highway-motorway-link",
+            "type": "line",
             "metadata": {
                 "mapbox:group": "1444849345966.4436"
             },
-            "ref": "highway-motorway-link-casing",
+            "source": "composite",
+            "source-layer": "highway",
+            "minzoom": 12,
             "interactive": true,
+            "filter": [
+                "all",
+                [
+                    "!in",
+                    "properties",
+                    "bridge",
+                    "bridge:oneway",
+                    "tunnel",
+                    "tunnel:oneway"
+                ],
+                [
+                    "==",
+                    "subclass",
+                    "motorway_link"
+                ]
+            ],
+            "layout": {
+                "line-cap": "round",
+                "line-join": "round"
+            },
             "paint": {
                 "line-color": "#fc8",
                 "line-width": {
@@ -1832,6 +1914,87 @@
             }
         },
         {
+            "id": "railway-minor",
+            "type": "line",
+            "metadata": {
+                "mapbox:group": "1444849345966.4436"
+            },
+            "source": "composite",
+            "source-layer": "railway",
+            "interactive": true,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "==",
+                    "class",
+                    "minor_rail"
+                ]
+            ],
+            "paint": {
+                "line-color": "hsla(0, 0%, 73%, 0.77)",
+                "line-width": {
+                    "base": 1.4,
+                    "stops": [
+                        [
+                            14,
+                            0.4
+                        ],
+                        [
+                            20,
+                            1
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "id": "railway-minor-hatching",
+            "type": "line",
+            "metadata": {
+                "mapbox:group": "1444849345966.4436"
+            },
+            "source": "composite",
+            "source-layer": "railway",
+            "interactive": true,
+            "filter": [
+                "==",
+                "class",
+                "minor_rail"
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "line-color": "hsla(0, 0%, 73%, 0.68)",
+                "line-dasharray": [
+                    0.2,
+                    8
+                ],
+                "line-width": {
+                    "base": 1.4,
+                    "stops": [
+                        [
+                            14.5,
+                            0
+                        ],
+                        [
+                            15,
+                            2
+                        ],
+                        [
+                            20,
+                            6
+                        ]
+                    ]
+                }
+            }
+        },
+        {
             "id": "railway",
             "type": "line",
             "metadata": {
@@ -1843,17 +2006,25 @@
             "filter": [
                 "all",
                 [
-                    "!in",
-                    "properties",
-                    "bridge",
-                    "bridge:oneway",
-                    "tunnel",
-                    "tunnel:oneway"
+                    "==",
+                    "$type",
+                    "LineString"
                 ],
                 [
-                    "==",
-                    "class",
-                    "rail"
+                    "all",
+                    [
+                        "!in",
+                        "properties",
+                        "bridge",
+                        "bridge:oneway",
+                        "tunnel",
+                        "tunnel:oneway"
+                    ],
+                    [
+                        "==",
+                        "class",
+                        "rail"
+                    ]
                 ]
             ],
             "paint": {
@@ -1879,11 +2050,29 @@
         },
         {
             "id": "railway-hatching",
+            "type": "line",
             "metadata": {
                 "mapbox:group": "1444849345966.4436"
             },
-            "ref": "railway",
+            "source": "composite",
+            "source-layer": "railway",
             "interactive": true,
+            "filter": [
+                "all",
+                [
+                    "!in",
+                    "properties",
+                    "bridge",
+                    "bridge:oneway",
+                    "tunnel",
+                    "tunnel:oneway"
+                ],
+                [
+                    "==",
+                    "class",
+                    "rail"
+                ]
+            ],
             "paint": {
                 "line-color": "#bbb",
                 "line-dasharray": [
@@ -2475,7 +2664,7 @@
                 "admin_level",
                 4,
                 6,
-                "8"
+                8
             ],
             "layout": {
                 "line-join": "round"
@@ -2489,7 +2678,7 @@
                     1
                 ],
                 "line-width": {
-                    "base": 1,
+                    "base": 1.4,
                     "stops": [
                         [
                             4,
@@ -2524,7 +2713,7 @@
                 "line-join": "round"
             },
             "paint": {
-                "line-color": "#9e9cab",
+                "line-color": "hsla(248, 8%, 64%, 0.82)",
                 "line-width": {
                     "base": 1,
                     "stops": [
@@ -2561,12 +2750,13 @@
                     "Open Sans Italic",
                     "Arial Unicode MS Regular"
                 ],
-                "text-size": 12,
+                "text-size": 14,
                 "text-field": "{name}",
                 "text-max-width": 5,
                 "text-rotation-alignment": "map",
                 "symbol-placement": "line",
-                "symbol-spacing": 350
+                "symbol-spacing": 350,
+                "text-letter-spacing": 0.2
             },
             "paint": {
                 "text-color": "#74aee9",
@@ -2575,11 +2765,9 @@
             }
         },
         {
-            "id": "poi-s",
+            "id": "poi-level-3",
             "type": "symbol",
-            "metadata": {
-                "mapbox:group": "1444849297111.495"
-            },
+            "metadata": {},
             "source": "composite",
             "source-layer": "poi",
             "minzoom": 16,
@@ -2621,11 +2809,9 @@
             }
         },
         {
-            "id": "poi-m",
+            "id": "poi-level-2",
             "type": "symbol",
-            "metadata": {
-                "mapbox:group": "1444849297111.495"
-            },
+            "metadata": {},
             "source": "composite",
             "source-layer": "poi",
             "minzoom": 15,
@@ -2675,11 +2861,9 @@
             }
         },
         {
-            "id": "poi-l",
+            "id": "poi-level-1",
             "type": "symbol",
-            "metadata": {
-                "mapbox:group": "1444849297111.495"
-            },
+            "metadata": {},
             "source": "composite",
             "source-layer": "poi",
             "minzoom": 14,
@@ -2687,22 +2871,14 @@
             "filter": [
                 "all",
                 [
+                    "<=",
+                    "rank",
+                    14
+                ],
+                [
                     "==",
                     "$type",
                     "Point"
-                ],
-                [
-                    "all",
-                    [
-                        "<=",
-                        "rank",
-                        14
-                    ],
-                    [
-                        ">=",
-                        "rank",
-                        8
-                    ]
                 ]
             ],
             "layout": {
@@ -2729,49 +2905,43 @@
             }
         },
         {
-            "id": "poi-xl",
+            "id": "highway-name-path",
             "type": "symbol",
-            "metadata": {
-                "mapbox:group": "1444849297111.495"
-            },
+            "metadata": {},
             "source": "composite",
-            "source-layer": "poi",
-            "minzoom": 13,
+            "source-layer": "highway_name",
             "interactive": true,
             "filter": [
-                "all",
-                [
-                    "<=",
-                    "rank",
-                    7
-                ],
-                [
-                    "==",
-                    "$type",
-                    "Point"
-                ]
+                "==",
+                "class",
+                "path"
             ],
             "layout": {
-                "text-padding": 2,
+                "text-size": {
+                    "base": 1,
+                    "stops": [
+                        [
+                            13,
+                            12
+                        ],
+                        [
+                            14,
+                            13
+                        ]
+                    ]
+                },
                 "text-font": [
-                    "Open Sans Semibold",
-                    "Arial Unicode MS Bold"
+                    "Open Sans Regular",
+                    "Arial Unicode MS Regular"
                 ],
-                "text-anchor": "top",
-                "icon-image": "{class}_11",
                 "text-field": "{name}",
-                "text-offset": [
-                    0,
-                    0.6
-                ],
-                "text-size": 12,
-                "text-max-width": 9
+                "symbol-placement": "line",
+                "text-rotation-alignment": "map"
             },
             "paint": {
-                "text-halo-blur": 0.5,
-                "text-color": "#666",
-                "text-halo-width": 1,
-                "text-halo-color": "#ffffff"
+                "text-halo-color": "#f8f4f0",
+                "text-color": "hsl(30, 23%, 62%)",
+                "text-halo-width": 0.5
             }
         },
         {
@@ -2782,9 +2952,11 @@
             "source-layer": "highway_name",
             "interactive": true,
             "filter": [
-                "!=",
+                "in",
                 "class",
-                "ferry"
+                "major_road",
+                "minor_road",
+                "motorway"
             ],
             "layout": {
                 "text-size": {
