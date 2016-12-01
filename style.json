@@ -25,7 +25,7 @@
         "name": "Water"
       },
       "1444849345966.4436": {
-        "collapsed": true,
+        "collapsed": false,
         "name": "Roads"
       },
       "1444849334699.1902": {
@@ -36,10 +36,10 @@
     "mapbox:autocomposite": true
   },
   "center": [
-    10.313784000399778,
-    46.80811794792362
+    -122.2766366241791,
+    47.59512051380412
   ],
-  "zoom": 8.836308858075672,
+  "zoom": 10.65915586048882,
   "bearing": 0,
   "pitch": 0,
   "sources": {
@@ -54,7 +54,6 @@
     {
       "id": "background",
       "type": "background",
-      "interactive": true,
       "paint": {
         "background-color": "#f8f4f0"
       }
@@ -67,7 +66,6 @@
       },
       "source": "composite",
       "source-layer": "landcover",
-      "interactive": true,
       "filter": [
         "==",
         "subclass",
@@ -101,14 +99,25 @@
       },
       "source": "composite",
       "source-layer": "landuse",
-      "interactive": true,
       "filter": [
         "==",
         "class",
         "residential"
       ],
       "paint": {
-        "fill-color": "hsla(30, 19%, 90%, 0.4)"
+        "fill-color": {
+          "base": 1,
+          "stops": [
+            [
+              12,
+              "hsla(30, 19%, 90%, 0.4)"
+            ],
+            [
+              16,
+              "hsla(30, 19%, 90%, 0.2)"
+            ]
+          ]
+        }
       }
     },
     {
@@ -119,7 +128,6 @@
       },
       "source": "composite",
       "source-layer": "landuse",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -145,7 +153,6 @@
       },
       "source": "composite",
       "source-layer": "landuse",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -171,11 +178,10 @@
       },
       "source": "composite",
       "source-layer": "park",
-      "interactive": true,
       "filter": [
         "==",
-        "class",
-        "national_park"
+        "$type",
+        "Polygon"
       ],
       "paint": {
         "fill-color": "#d8e8c8",
@@ -202,15 +208,26 @@
       },
       "source": "composite",
       "source-layer": "park",
-      "interactive": true,
       "filter": [
         "==",
-        "class",
-        "national_park"
+        "$type",
+        "Polygon"
       ],
       "layout": {},
       "paint": {
-        "line-color": "hsla(96, 40%, 49%, 0.66)",
+        "line-color": {
+          "base": 1,
+          "stops": [
+            [
+              6,
+              "hsla(96, 40%, 49%, 0.36)"
+            ],
+            [
+              8,
+              "hsla(96, 40%, 49%, 0.66)"
+            ]
+          ]
+        },
         "line-dasharray": [
           3,
           3
@@ -225,7 +242,6 @@
       },
       "source": "composite",
       "source-layer": "landuse",
-      "interactive": true,
       "filter": [
         "==",
         "class",
@@ -243,7 +259,6 @@
       },
       "source": "composite",
       "source-layer": "landuse",
-      "interactive": true,
       "filter": [
         "==",
         "class",
@@ -261,7 +276,6 @@
       },
       "source": "composite",
       "source-layer": "landuse",
-      "interactive": true,
       "filter": [
         "==",
         "class",
@@ -279,7 +293,6 @@
       },
       "source": "composite",
       "source-layer": "landuse",
-      "interactive": true,
       "filter": [
         "==",
         "class",
@@ -297,7 +310,6 @@
       },
       "source": "composite",
       "source-layer": "landcover",
-      "interactive": true,
       "filter": [
         "==",
         "class",
@@ -330,7 +342,6 @@
       },
       "source": "composite",
       "source-layer": "landcover",
-      "interactive": true,
       "filter": [
         "==",
         "class",
@@ -338,7 +349,7 @@
       ],
       "paint": {
         "fill-color": "#d8e8c8",
-        "fill-opacity": 0.1
+        "fill-opacity": 1
       }
     },
     {
@@ -349,7 +360,6 @@
       },
       "source": "composite",
       "source-layer": "park",
-      "interactive": true,
       "filter": [
         "==",
         "class",
@@ -368,7 +378,6 @@
       },
       "source": "composite",
       "source-layer": "waterway",
-      "interactive": true,
       "filter": [
         "!in",
         "class",
@@ -404,7 +413,6 @@
       },
       "source": "composite",
       "source-layer": "waterway",
-      "interactive": true,
       "filter": [
         "in",
         "class",
@@ -439,7 +447,6 @@
       },
       "source": "composite",
       "source-layer": "waterway",
-      "interactive": true,
       "filter": [
         "==",
         "class",
@@ -455,11 +462,52 @@
           "stops": [
             [
               10,
-              0.5
+              0.8
             ],
             [
               20,
               6
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "water-offset",
+      "type": "fill",
+      "metadata": {
+        "mapbox:group": "1444849382550.77"
+      },
+      "source": "composite",
+      "source-layer": "water",
+      "maxzoom": 8,
+      "filter": [
+        "==",
+        "$type",
+        "Polygon"
+      ],
+      "layout": {
+        "visibility": "visible"
+      },
+      "paint": {
+        "fill-opacity": 1,
+        "fill-color": "#a0c8f0",
+        "fill-translate": {
+          "base": 1,
+          "stops": [
+            [
+              6,
+              [
+                2,
+                0
+              ]
+            ],
+            [
+              8,
+              [
+                0,
+                0
+              ]
             ]
           ]
         }
@@ -473,25 +521,11 @@
       },
       "source": "composite",
       "source-layer": "water",
-      "interactive": true,
-      "paint": {
-        "fill-color": "#a0c8f0"
-      }
-    },
-    {
-      "id": "water-offset",
-      "metadata": {
-        "mapbox:group": "1444849382550.77"
+      "layout": {
+        "visibility": "visible"
       },
-      "ref": "water",
-      "interactive": true,
       "paint": {
-        "fill-translate": [
-          0,
-          2.5
-        ],
-        "fill-color": "white",
-        "fill-opacity": 0.3
+        "fill-color": "hsl(210, 67%, 85%)"
       }
     },
     {
@@ -500,7 +534,6 @@
         "mapbox:group": "1444849382550.77"
       },
       "ref": "water",
-      "interactive": true,
       "paint": {
         "fill-translate": [
           0,
@@ -517,7 +550,6 @@
       },
       "source": "composite",
       "source-layer": "landcover",
-      "interactive": true,
       "filter": [
         "==",
         "subclass",
@@ -551,7 +583,6 @@
       },
       "source": "composite",
       "source-layer": "building",
-      "interactive": true,
       "paint": {
         "fill-color": {
           "base": 1,
@@ -577,7 +608,6 @@
       },
       "source": "composite",
       "source-layer": "building",
-      "interactive": true,
       "layout": {
         "visibility": "visible"
       },
@@ -626,7 +656,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -677,7 +706,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -739,7 +767,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -783,7 +810,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -834,7 +860,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -889,7 +914,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -940,7 +964,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -987,7 +1010,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1032,7 +1054,6 @@
         "mapbox:group": "1444849354174.1904"
       },
       "ref": "tunnel-secondary-tertiary-casing",
-      "interactive": true,
       "paint": {
         "line-color": "#fff4c6",
         "line-width": {
@@ -1060,7 +1081,6 @@
         "mapbox:group": "1444849354174.1904"
       },
       "ref": "tunnel-trunk-primary-casing",
-      "interactive": true,
       "paint": {
         "line-color": "#fff4c6",
         "line-width": {
@@ -1088,7 +1108,6 @@
         "mapbox:group": "1444849354174.1904"
       },
       "ref": "tunnel-motorway-casing",
-      "interactive": true,
       "paint": {
         "line-color": "#ffdaa6",
         "line-width": {
@@ -1118,7 +1137,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1165,7 +1183,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "==",
         "$type",
@@ -1190,7 +1207,6 @@
       "source": "composite",
       "source-layer": "transportation",
       "minzoom": 12,
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1244,7 +1260,6 @@
       "source": "composite",
       "source-layer": "transportation",
       "minzoom": 13,
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1301,7 +1316,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1374,7 +1388,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1421,7 +1434,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1477,7 +1489,6 @@
       "source": "composite",
       "source-layer": "transportation",
       "minzoom": 5,
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1530,7 +1541,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1583,7 +1593,6 @@
       "source": "composite",
       "source-layer": "transportation",
       "minzoom": 12,
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1633,7 +1642,6 @@
         "mapbox:group": "1444849345966.4436"
       },
       "ref": "highway-link-casing",
-      "interactive": true,
       "paint": {
         "line-color": "#fea",
         "line-width": {
@@ -1665,7 +1673,6 @@
         "mapbox:group": "1444849345966.4436"
       },
       "ref": "highway-minor-casing",
-      "interactive": true,
       "paint": {
         "line-color": "#fff",
         "line-opacity": 1,
@@ -1694,7 +1701,6 @@
         "mapbox:group": "1444849345966.4436"
       },
       "ref": "highway-secondary-tertiary-casing",
-      "interactive": true,
       "paint": {
         "line-color": "#fea",
         "line-width": {
@@ -1718,11 +1724,40 @@
     },
     {
       "id": "highway-trunk-primary",
+      "type": "line",
       "metadata": {
         "mapbox:group": "1444849345966.4436"
       },
-      "ref": "highway-trunk-primary-casing",
-      "interactive": true,
+      "source": "composite",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "all",
+          [
+            "!in",
+            "brunnel",
+            "bridge",
+            "tunnel"
+          ],
+          [
+            "in",
+            "subclass",
+            "primary",
+            "trunk"
+          ]
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": "#fea",
         "line-width": {
@@ -1746,11 +1781,40 @@
     },
     {
       "id": "highway-motorway",
+      "type": "line",
       "metadata": {
         "mapbox:group": "1444849345966.4436"
       },
-      "ref": "highway-motorway-casing",
-      "interactive": true,
+      "source": "composite",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "all",
+          [
+            "!in",
+            "brunnel",
+            "bridge",
+            "tunnel"
+          ],
+          [
+            "==",
+            "subclass",
+            "motorway"
+          ]
+        ]
+      ],
+      "layout": {
+        "line-cap": "round",
+        "line-join": "round",
+        "visibility": "visible"
+      },
       "paint": {
         "line-color": "#fc8",
         "line-width": {
@@ -1780,7 +1844,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1826,7 +1889,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1883,7 +1945,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -1937,7 +1998,6 @@
         "mapbox:group": "1444849345966.4436"
       },
       "ref": "railway",
-      "interactive": true,
       "paint": {
         "line-color": "#bbb",
         "line-dasharray": [
@@ -1971,7 +2031,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -2022,7 +2081,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -2076,7 +2134,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -2120,7 +2177,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -2171,7 +2227,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -2221,7 +2276,6 @@
       },
       "source": "composite",
       "source-layer": "transportation",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -2266,7 +2320,6 @@
         "mapbox:group": "1444849334699.1902"
       },
       "ref": "bridge-path-casing",
-      "interactive": true,
       "paint": {
         "line-color": "#cba",
         "line-width": {
@@ -2294,7 +2347,6 @@
         "mapbox:group": "1444849334699.1902"
       },
       "ref": "bridge-motorway-link-casing",
-      "interactive": true,
       "paint": {
         "line-color": "#fc8",
         "line-width": {
@@ -2326,7 +2378,6 @@
         "mapbox:group": "1444849334699.1902"
       },
       "ref": "bridge-link-casing",
-      "interactive": true,
       "paint": {
         "line-color": "#fea",
         "line-width": {
@@ -2358,7 +2409,6 @@
         "mapbox:group": "1444849334699.1902"
       },
       "ref": "bridge-secondary-tertiary-casing",
-      "interactive": true,
       "paint": {
         "line-color": "#fea",
         "line-width": {
@@ -2386,7 +2436,6 @@
         "mapbox:group": "1444849334699.1902"
       },
       "ref": "bridge-trunk-primary-casing",
-      "interactive": true,
       "paint": {
         "line-color": "#fea",
         "line-width": {
@@ -2414,7 +2463,6 @@
         "mapbox:group": "1444849334699.1902"
       },
       "ref": "bridge-motorway-casing",
-      "interactive": true,
       "paint": {
         "line-color": "#fc8",
         "line-width": {
@@ -2444,7 +2492,6 @@
       },
       "source": "composite",
       "source-layer": "railway",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -2485,7 +2532,6 @@
         "mapbox:group": "1444849334699.1902"
       },
       "ref": "bridge-railway",
-      "interactive": true,
       "paint": {
         "line-color": "#bbb",
         "line-dasharray": [
@@ -2516,7 +2562,6 @@
       "type": "line",
       "source": "composite",
       "source-layer": "boundary",
-      "interactive": true,
       "filter": [
         "in",
         "admin_level",
@@ -2559,7 +2604,6 @@
       "type": "line",
       "source": "composite",
       "source-layer": "boundary",
-      "interactive": true,
       "filter": [
         "==",
         "admin_level",
@@ -2574,6 +2618,10 @@
         "line-width": {
           "base": 1,
           "stops": [
+            [
+              0,
+              0.6
+            ],
             [
               4,
               1.4
@@ -2596,7 +2644,6 @@
       "source": "composite",
       "source-layer": "waterway",
       "minzoom": 13,
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -2629,15 +2676,43 @@
       }
     },
     {
-      "id": "water-name",
+      "id": "water-name-lakeline",
       "type": "symbol",
       "source": "composite",
       "source-layer": "water_name",
-      "interactive": true,
       "filter": [
         "==",
         "$type",
         "LineString"
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Italic",
+          "Arial Unicode MS Regular"
+        ],
+        "text-size": 14,
+        "text-field": "{name}",
+        "text-max-width": 5,
+        "text-rotation-alignment": "map",
+        "symbol-placement": "line",
+        "symbol-spacing": 350,
+        "text-letter-spacing": 0.2
+      },
+      "paint": {
+        "text-color": "#74aee9",
+        "text-halo-width": 1.5,
+        "text-halo-color": "rgba(255,255,255,0.7)"
+      }
+    },
+    {
+      "id": "water-name",
+      "type": "symbol",
+      "source": "composite",
+      "source-layer": "water_name",
+      "filter": [
+        "==",
+        "$type",
+        "Point"
       ],
       "layout": {
         "text-font": [
@@ -2664,7 +2739,6 @@
       "source": "composite",
       "source-layer": "poi",
       "minzoom": 16,
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -2707,7 +2781,6 @@
       "source": "composite",
       "source-layer": "poi",
       "minzoom": 15,
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -2758,18 +2831,24 @@
       "source": "composite",
       "source-layer": "poi",
       "minzoom": 14,
-      "interactive": true,
       "filter": [
         "all",
-        [
-          "<=",
-          "rank",
-          14
-        ],
         [
           "==",
           "$type",
           "Point"
+        ],
+        [
+          "all",
+          [
+            "<=",
+            "rank",
+            14
+          ],
+          [
+            "has",
+            "name"
+          ]
         ]
       ],
       "layout": {
@@ -2799,8 +2878,8 @@
       "id": "highway-name-path",
       "type": "symbol",
       "source": "composite",
-      "source-layer": "highway_name",
-      "interactive": true,
+      "source-layer": "transportation_name",
+      "minzoom": 15.5,
       "filter": [
         "==",
         "class",
@@ -2835,17 +2914,67 @@
       }
     },
     {
-      "id": "highway-name",
+      "id": "highway-name-minor",
       "type": "symbol",
       "source": "composite",
-      "source-layer": "highway_name",
-      "interactive": true,
+      "source-layer": "transportation_name",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "in",
+          "class",
+          "minor",
+          "service",
+          "track"
+        ]
+      ],
+      "layout": {
+        "text-size": {
+          "base": 1,
+          "stops": [
+            [
+              13,
+              12
+            ],
+            [
+              14,
+              13
+            ]
+          ]
+        },
+        "text-font": [
+          "Open Sans Regular",
+          "Arial Unicode MS Regular"
+        ],
+        "text-field": "{name}",
+        "symbol-placement": "line",
+        "text-rotation-alignment": "map"
+      },
+      "paint": {
+        "text-halo-blur": 0.5,
+        "text-color": "#765",
+        "text-halo-width": 1
+      }
+    },
+    {
+      "id": "highway-name-major",
+      "type": "symbol",
+      "source": "composite",
+      "source-layer": "transportation_name",
+      "minzoom": 12.2,
       "filter": [
         "in",
         "class",
-        "major_road",
-        "minor_road",
-        "motorway"
+        "primary",
+        "secondary",
+        "tertiary",
+        "trunk"
       ],
       "layout": {
         "text-size": {
@@ -2879,9 +3008,8 @@
       "id": "highway-shield",
       "type": "symbol",
       "source": "composite",
-      "source-layer": "highway_name",
+      "source-layer": "transportation_name",
       "minzoom": 8,
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -2896,6 +3024,14 @@
         ]
       ],
       "layout": {
+        "text-size": 11,
+        "icon-image": "motorway_{ref_length}",
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": 500,
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
         "symbol-placement": {
           "base": 1,
           "stops": [
@@ -2909,16 +3045,9 @@
             ]
           ]
         },
-        "text-font": [
-          "Open Sans Semibold",
-          "Arial Unicode MS Bold"
-        ],
-        "icon-image": "motorway_{ref_length}",
-        "text-field": "{ref}",
-        "icon-rotation-alignment": "viewport",
         "text-rotation-alignment": "viewport",
-        "text-size": 11,
-        "symbol-spacing": 500
+        "icon-size": 0.85,
+        "text-field": "{ref}"
       },
       "paint": {}
     },
@@ -2930,20 +3059,20 @@
       },
       "source": "composite",
       "source-layer": "place",
-      "interactive": true,
       "filter": [
         "all",
-        [
-          "!=",
-          "class",
-          "country"
-        ],
         [
           "!in",
           "subclass",
           "city",
           "town",
           "village"
+        ],
+        [
+          "in",
+          "class",
+          "settlement",
+          "subregion"
         ]
       ],
       "layout": {
@@ -2983,7 +3112,6 @@
       },
       "source": "composite",
       "source-layer": "place",
-      "interactive": true,
       "filter": [
         "==",
         "subclass",
@@ -3024,7 +3152,6 @@
       },
       "source": "composite",
       "source-layer": "place",
-      "interactive": true,
       "filter": [
         "==",
         "subclass",
@@ -3065,11 +3192,18 @@
       },
       "source": "composite",
       "source-layer": "place",
-      "interactive": true,
       "filter": [
-        "==",
-        "subclass",
-        "city"
+        "all",
+        [
+          "!=",
+          "capital",
+          2
+        ],
+        [
+          "==",
+          "subclass",
+          "city"
+        ]
       ],
       "layout": {
         "text-font": [
@@ -3099,6 +3233,61 @@
       }
     },
     {
+      "id": "place-city-capital",
+      "type": "symbol",
+      "metadata": {
+        "mapbox:group": "1444849242106.713"
+      },
+      "source": "composite",
+      "source-layer": "place",
+      "filter": [
+        "all",
+        [
+          "==",
+          "capital",
+          2
+        ],
+        [
+          "==",
+          "subclass",
+          "city"
+        ]
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Semibold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-size": {
+          "base": 1.2,
+          "stops": [
+            [
+              7,
+              14
+            ],
+            [
+              11,
+              24
+            ]
+          ]
+        },
+        "text-field": "{name_en}",
+        "text-max-width": 8,
+        "icon-image": "star_11",
+        "text-offset": [
+          0.4,
+          0
+        ],
+        "icon-size": 0.8,
+        "text-anchor": "left"
+      },
+      "paint": {
+        "text-color": "#333",
+        "text-halo-width": 1.2,
+        "text-halo-color": "rgba(255,255,255,0.8)"
+      }
+    },
+    {
       "id": "place-country-3",
       "type": "symbol",
       "metadata": {
@@ -3106,7 +3295,6 @@
       },
       "source": "composite",
       "source-layer": "place",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -3156,7 +3344,6 @@
       },
       "source": "composite",
       "source-layer": "place",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -3206,7 +3393,6 @@
       },
       "source": "composite",
       "source-layer": "place",
-      "interactive": true,
       "filter": [
         "all",
         [
@@ -3240,6 +3426,37 @@
         },
         "text-transform": "uppercase",
         "text-max-width": 6.25
+      },
+      "paint": {
+        "text-halo-blur": 1,
+        "text-color": "#334",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.8)"
+      }
+    },
+    {
+      "id": "place-continent",
+      "type": "symbol",
+      "metadata": {
+        "mapbox:group": "1444849242106.713"
+      },
+      "source": "composite",
+      "source-layer": "place",
+      "maxzoom": 1,
+      "filter": [
+        "==",
+        "class",
+        "continent"
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Bold",
+          "Arial Unicode MS Bold"
+        ],
+        "text-field": "{name_en}",
+        "text-size": 14,
+        "text-max-width": 6.25,
+        "text-transform": "uppercase"
       },
       "paint": {
         "text-halo-blur": 1,
