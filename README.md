@@ -1,5 +1,7 @@
 # OSM Bright
 
+[![Build Status](https://travis-ci.org/klokantech/osm-bright-gl-style.svg?branch=master)](https://travis-ci.org/klokantech/osm-bright-gl-style)
+
 A Mapbox GL basemap style showcasing OpenStreetMap.
 It is using the vector tile
 schema of [OpenMapTiles](https://github.com/openmaptiles/openmaptiles).
