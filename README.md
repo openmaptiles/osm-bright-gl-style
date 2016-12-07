@@ -1,4 +1,5 @@
 # OSM Bright
+[![Build Status](https://travis-ci.org/openmaptiles/osm-bright-gl-style.svg?branch=master)](https://travis-ci.org/openmaptiles/osm-bright-gl-style)
 
 A Mapbox GL basemap style showcasing OpenStreetMap.
 It is using the vector tile
