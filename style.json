@@ -36,20 +36,20 @@
     "mapbox:autocomposite": true
   },
   "center": [
-    -122.2766366241791,
-    47.59512051380412
+    -122.05825947866978,
+    47.67182937088046
   ],
-  "zoom": 10.65915586048882,
+  "zoom": 8.65915586048882,
   "bearing": 0,
   "pitch": 0,
   "sources": {
     "composite": {
-      "url": "mapbox://morgenkaffee.8to5aq6q",
+      "url": "mapbox://openmaptiles.805mi4we",
       "type": "vector"
     }
   },
-  "sprite": "mapbox://sprites/morgenkaffee/ciuxs7uqv016r2inocqbo6126",
-  "glyphs": "mapbox://fonts/morgenkaffee/{fontstack}/{range}.pbf",
+  "sprite": "mapbox://sprites/openmaptiles/ciw6czz2n00242kmg6hw20box",
+  "glyphs": "mapbox://fonts/openmaptiles/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
