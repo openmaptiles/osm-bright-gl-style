@@ -33,7 +33,8 @@
         "name": "Bridges"
       }
     },
-    "mapbox:autocomposite": true
+    "mapbox:autocomposite": true,
+    "openmaptiles:version": "3.x"
   },
   "center": [
     -122.05825947866978,
