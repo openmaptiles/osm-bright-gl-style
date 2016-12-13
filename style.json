@@ -138,7 +138,7 @@
         ],
         [
           "==",
-          "subclass",
+          "class",
           "commercial"
         ]
       ],
@@ -163,7 +163,7 @@
         ],
         [
           "==",
-          "subclass",
+          "class",
           "industrial"
         ]
       ],
