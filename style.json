@@ -45,7 +45,7 @@
   "pitch": 0,
   "sources": {
     "openmaptiles": {
-      "url": "mapbox://openmaptiles.805mi4we",
+      "url": "mapbox://openmaptiles.4qljc88t",
       "type": "vector"
     }
   },
@@ -974,7 +974,7 @@
         ],
         [
           "in",
-          "subclass",
+          "class",
           "service",
           "track"
         ]
@@ -1271,7 +1271,7 @@
         ],
         [
           "in",
-          "subclass",
+          "class",
           "primary_link",
           "secondary_link",
           "tertiary_link",
@@ -1399,7 +1399,7 @@
         ],
         [
           "in",
-          "subclass",
+          "class",
           "secondary",
           "tertiary"
         ]
@@ -1445,7 +1445,7 @@
         ],
         [
           "in",
-          "subclass",
+          "class",
           "primary",
           "trunk"
         ]
@@ -1500,7 +1500,7 @@
         ],
         [
           "==",
-          "subclass",
+          "class",
           "motorway"
         ]
       ],
@@ -1604,7 +1604,7 @@
         ],
         [
           "==",
-          "subclass",
+          "class",
           "motorway_link"
         ]
       ],
@@ -1748,7 +1748,7 @@
           ],
           [
             "in",
-            "subclass",
+            "class",
             "primary",
             "trunk"
           ]
@@ -1806,7 +1806,7 @@
           ],
           [
             "==",
-            "subclass",
+            "class",
             "motorway"
           ]
         ]
@@ -2041,7 +2041,7 @@
         ],
         [
           "==",
-          "subclass",
+          "class",
           "motorway_link"
         ]
       ],
@@ -2091,7 +2091,7 @@
         ],
         [
           "in",
-          "subclass",
+          "class",
           "primary_link",
           "secondary_link",
           "tertiary_link",
@@ -2144,7 +2144,7 @@
         ],
         [
           "in",
-          "subclass",
+          "class",
           "secondary",
           "tertiary"
         ]
@@ -2187,7 +2187,7 @@
         ],
         [
           "in",
-          "subclass",
+          "class",
           "primary",
           "trunk"
         ]
@@ -2237,7 +2237,7 @@
         ],
         [
           "==",
-          "subclass",
+          "class",
           "motorway"
         ]
       ],
@@ -3074,7 +3074,7 @@
         "all",
         [
           "!in",
-          "subclass",
+          "class",
           "city",
           "town",
           "village"
@@ -3126,7 +3126,7 @@
       "source-layer": "place",
       "filter": [
         "==",
-        "subclass",
+        "class",
         "village"
       ],
       "layout": {
@@ -3167,7 +3167,7 @@
       "source-layer": "place",
       "filter": [
         "==",
-        "subclass",
+        "class",
         "town"
       ],
       "layout": {
@@ -3215,7 +3215,7 @@
         ],
         [
           "==",
-          "subclass",
+          "class",
           "city"
         ]
       ],
@@ -3264,7 +3264,7 @@
         ],
         [
           "==",
-          "subclass",
+          "class",
           "city"
         ]
       ],
