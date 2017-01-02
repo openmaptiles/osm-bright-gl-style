@@ -37,10 +37,10 @@
     "openmaptiles:version": "3.x"
   },
   "center": [
-    -120.97945979949654,
-    47.82891995412305
+    8.542,
+    47.372
   ],
-  "zoom": 7.194570163444179,
+  "zoom": 11.6,
   "bearing": 0,
   "pitch": 0,
   "sources": {
@@ -2492,7 +2492,7 @@
         "mapbox:group": "1444849334699.1902"
       },
       "source": "openmaptiles",
-      "source-layer": "railway",
+      "source-layer": "transportation",
       "filter": [
         "all",
         [
