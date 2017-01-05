@@ -34,7 +34,9 @@
       }
     },
     "mapbox:autocomposite": false,
-    "openmaptiles:version": "3.x"
+    "openmaptiles:version": "3.x",
+    "openmaptiles:mapbox:owner": "openmaptiles",
+    "openmaptiles:mapbox:source:url": "mapbox://openmaptiles.4qljc88t"
   },
   "center": [
     8.542,
@@ -45,12 +47,12 @@
   "pitch": 0,
   "sources": {
     "openmaptiles": {
-      "url": "mapbox://openmaptiles.4qljc88t",
-      "type": "vector"
+      "type": "vector",
+      "url": "https://free.tilehosting.com/data/v3.json?key=tXiQqN3lIgskyDErJCeY"
     }
   },
-  "sprite": "mapbox://sprites/openmaptiles/ciw6czz2n00242kmg6hw20box",
-  "glyphs": "mapbox://fonts/openmaptiles/{fontstack}/{range}.pbf",
+  "sprite": "https://openmaptiles.github.io/osm-bright-gl-style/sprite",
+  "glyphs": "https://fonts.openmaptiles.org/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
@@ -959,29 +961,10 @@
     },
     {
       "id": "tunnel-service-track",
-      "type": "line",
       "metadata": {
         "mapbox:group": "1444849354174.1904"
       },
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "filter": [
-        "all",
-        [
-          "==",
-          "brunnel",
-          "tunnel"
-        ],
-        [
-          "in",
-          "class",
-          "service",
-          "track"
-        ]
-      ],
-      "layout": {
-        "line-join": "round"
-      },
+      "ref": "tunnel-service-track-casing",
       "paint": {
         "line-color": "#fff",
         "line-width": {
@@ -1587,31 +1570,10 @@
     },
     {
       "id": "highway-motorway-link",
-      "type": "line",
       "metadata": {
         "mapbox:group": "1444849345966.4436"
       },
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "minzoom": 12,
-      "filter": [
-        "all",
-        [
-          "!in",
-          "brunnel",
-          "bridge",
-          "tunnel"
-        ],
-        [
-          "==",
-          "class",
-          "motorway_link"
-        ]
-      ],
-      "layout": {
-        "line-cap": "round",
-        "line-join": "round"
-      },
+      "ref": "highway-motorway-link-casing",
       "paint": {
         "line-color": "#fc8",
         "line-width": {
@@ -3071,14 +3033,11 @@
       "source": "openmaptiles",
       "source-layer": "place",
       "filter": [
-        "all",
-        [
-          "!in",
-          "class",
-          "city",
-          "town",
-          "village"
-        ]
+        "!in",
+        "class",
+        "city",
+        "town",
+        "village"
       ],
       "layout": {
         "text-letter-spacing": 0.1,
@@ -3480,9 +3439,5 @@
       }
     }
   ],
-  "created": "2016-12-01T12:50:19.350Z",
-  "id": "ciw6czz2n00242kmg6hw20box",
-  "modified": "2016-12-13T08:00:00.985Z",
-  "owner": "openmaptiles",
-  "draft": false
+  "id": "ciw6czz2n00242kmg6hw20box"
 }
