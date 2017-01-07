@@ -1,8 +1,9 @@
-Copyright (c) 2016, KlokanTech.com & OpenMapTiles contributors.
+Copyright (c) 2016, KlokanTech.com & OpenMapTiles contributors.  
+Copyright (c) 2014, Mapbox.  
 All rights reserved.
 
-Derived from "Mapbox Open Styles": https://github.com/mapbox/mapbox-gl-styles
-Copyright (c) 2014, Mapbox, all rights reserved.
+Modifications by KlokanTech.com & OpenMapTiles contributors.  
+Derived from "Mapbox Open Styles" https://github.com/mapbox/mapbox-gl-styles
 
 # Code license: BSD 3-Clause License
 
@@ -38,7 +39,24 @@ the map) are licensed under the Creative Commons Attribution 4.0 license.
 
 To view a copy of the license, visit http://creativecommons.org/licenses/by/4.0/.
 
-Attribution to "Mapbox Open Styles" and "OpenMapTiles.org" (or "OpenMapTiles"
-with a link to http://openmaptiles.org/) needs not to be provided on map images,
-but should be reasonably accessible from maps based on this style (for example,
-in a webpage linked from copyright notice on the map).
+Attribution for the design defined in this repository needs not to be provided
+on map images, but should be reasonably accessible from maps based on this style
+(for example, in a webpage linked from copyright notice on the map).
+
+Products or services using maps derived from OpenMapTiles schema need to visibly
+credit "OpenMapTiles.org" or reference "OpenMapTiles" with a link to
+http://openmaptiles.org/.
+
+For a browsable electronic map based on OpenMapTiles and OpenStreetMap data, the
+credit should appear in the corner of the map. For example:
+
+[© OpenMapTiles](http://openmaptiles.org/)
+[© OpenStreetMap contributors](http://www.openstreetmap.org/copyright)
+
+For printed and static maps a similar attribution should be made in a textual
+description near the image, in the same fashion as if you cite a photograph.
+
+Exceptions to OpenMapTiles attribution requirement can be in a written form granted
+by Klokan Technologies GmbH (info@klokantech.com).  
+The project contributors grant Klokan Technologies GmbH the license to give such
+exceptions on a commercial basis.
