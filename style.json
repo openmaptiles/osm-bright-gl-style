@@ -3009,14 +3009,22 @@
       }
     },
     {
-      "id": "water-name",
+      "id": "water-name-ocean",
       "type": "symbol",
       "source": "openmaptiles",
       "source-layer": "water_name",
       "filter": [
-        "==",
-        "$type",
-        "Point"
+        "all",
+        [
+          "==",
+          "$type",
+          "Point"
+        ],
+        [
+          "==",
+          "class",
+          "ocean"
+        ]
       ],
       "layout": {
         "text-font": [
@@ -3028,9 +3036,59 @@
         "text-field": "{name}",
         "text-max-width": 5,
         "text-rotation-alignment": "map",
-        "symbol-placement": "line",
+        "symbol-placement": "point",
         "symbol-spacing": 350,
         "text-letter-spacing": 0.2
+      },
+      "paint": {
+        "text-color": "#74aee9",
+        "text-halo-width": 1.5,
+        "text-halo-color": "rgba(255,255,255,0.7)"
+      }
+    },
+    {
+      "id": "water-name-other",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "water_name",
+      "filter": [
+        "all",
+        [
+          "==",
+          "$type",
+          "Point"
+        ],
+        [
+          "!in",
+          "class",
+          "ocean"
+        ]
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Italic",
+          "Klokantech Noto Sans Italic",
+          "Klokantech Noto Sans CJK Regular"
+        ],
+        "text-size": {
+          "stops": [
+            [
+              0,
+              10
+            ],
+            [
+              6,
+              14
+            ]
+          ]
+        },
+        "text-field": "{name}",
+        "text-max-width": 5,
+        "text-rotation-alignment": "map",
+        "symbol-placement": "point",
+        "symbol-spacing": 350,
+        "text-letter-spacing": 0.2,
+        "visibility": "visible"
       },
       "paint": {
         "text-color": "#74aee9",
