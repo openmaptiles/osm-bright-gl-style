@@ -2860,16 +2860,24 @@
       }
     },
     {
-      "id": "boundary-level-4",
+      "id": "boundary-land-level-4",
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "boundary",
       "filter": [
-        "in",
-        "admin_level",
-        4,
-        6,
-        8
+        "all",
+        [
+          "in",
+          "admin_level",
+          4,
+          6,
+          8
+        ],
+        [
+          "!=",
+          "maritime",
+          1
+        ]
       ],
       "layout": {
         "line-join": "round"
@@ -2902,14 +2910,22 @@
       }
     },
     {
-      "id": "boundary-level-2",
+      "id": "boundary-land-level-2",
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "boundary",
       "filter": [
-        "==",
-        "admin_level",
-        2
+        "all",
+        [
+          "==",
+          "admin_level",
+          2
+        ],
+        [
+          "!=",
+          "maritime",
+          1
+        ]
       ],
       "layout": {
         "line-cap": "round",
