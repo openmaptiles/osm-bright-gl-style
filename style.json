@@ -1736,6 +1736,7 @@
       },
       "source": "openmaptiles",
       "source-layer": "transportation",
+      "minzoom": 5,
       "filter": [
         "all",
         [
@@ -1758,13 +1759,24 @@
       },
       "paint": {
         "line-color": "#e9ac77",
-        "line-opacity": 1,
+        "line-opacity": {
+          "stops": [
+            [
+              5,
+              0
+            ],
+            [
+              6,
+              1
+            ]
+          ]
+        },
         "line-width": {
           "base": 1.2,
           "stops": [
             [
               5,
-              0.4
+              0
             ],
             [
               6,
@@ -1790,7 +1802,7 @@
       },
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "minzoom": 5,
+      "minzoom": 4,
       "filter": [
         "all",
         [
@@ -1816,6 +1828,10 @@
           "base": 1.2,
           "stops": [
             [
+              4,
+              0
+            ],
+            [
               5,
               0.4
             ],
@@ -1830,6 +1846,18 @@
             [
               20,
               22
+            ]
+          ]
+        },
+        "line-opacity": {
+          "stops": [
+            [
+              4,
+              0
+            ],
+            [
+              5,
+              1
             ]
           ]
         }
@@ -3703,13 +3731,20 @@
           "==",
           "$type",
           "LineString"
+        ],
+        [
+          "!in",
+          "network",
+          "us-interstate",
+          "us-highway",
+          "us-state"
         ]
       ],
       "layout": {
-        "text-size": 11,
-        "icon-image": "motorway_{ref_length}",
+        "text-size": 10,
+        "icon-image": "road_{ref_length}",
         "icon-rotation-alignment": "viewport",
-        "symbol-spacing": 500,
+        "symbol-spacing": 200,
         "text-font": [
           "Open Sans Semibold",
           "Klokantech Noto Sans Regular",
@@ -3729,10 +3764,125 @@
           ]
         },
         "text-rotation-alignment": "viewport",
-        "icon-size": 0.85,
+        "icon-size": 1,
         "text-field": "{ref}"
       },
       "paint": {}
+    },
+    {
+      "id": "highway-shield-us-interstate",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "transportation_name",
+      "minzoom": 7,
+      "filter": [
+        "all",
+        [
+          "<=",
+          "ref_length",
+          6
+        ],
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "in",
+          "network",
+          "us-interstate"
+        ]
+      ],
+      "layout": {
+        "text-size": 10,
+        "icon-image": "{network}_{ref_length}",
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": 200,
+        "text-font": [
+          "Open Sans Semibold",
+          "Klokantech Noto Sans Regular",
+          "Klokantech Noto Sans CJK Regular"
+        ],
+        "symbol-placement": {
+          "base": 1,
+          "stops": [
+            [
+              7,
+              "point"
+            ],
+            [
+              7,
+              "line"
+            ],
+            [
+              8,
+              "line"
+            ]
+          ]
+        },
+        "text-rotation-alignment": "viewport",
+        "icon-size": 1,
+        "text-field": "{ref}"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)"
+      }
+    },
+    {
+      "id": "highway-shield-us-other",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "transportation_name",
+      "minzoom": 9,
+      "filter": [
+        "all",
+        [
+          "<=",
+          "ref_length",
+          6
+        ],
+        [
+          "==",
+          "$type",
+          "LineString"
+        ],
+        [
+          "in",
+          "network",
+          "us-highway",
+          "us-state"
+        ]
+      ],
+      "layout": {
+        "text-size": 10,
+        "icon-image": "{network}_{ref_length}",
+        "icon-rotation-alignment": "viewport",
+        "symbol-spacing": 200,
+        "text-font": [
+          "Open Sans Semibold",
+          "Klokantech Noto Sans Regular",
+          "Klokantech Noto Sans CJK Regular"
+        ],
+        "symbol-placement": {
+          "base": 1,
+          "stops": [
+            [
+              10,
+              "point"
+            ],
+            [
+              11,
+              "line"
+            ]
+          ]
+        },
+        "text-rotation-alignment": "viewport",
+        "icon-size": 1,
+        "text-field": "{ref}"
+      },
+      "paint": {
+        "text-color": "rgba(0, 0, 0, 1)"
+      }
     },
     {
       "id": "place-other",
