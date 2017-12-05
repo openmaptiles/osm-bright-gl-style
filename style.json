@@ -3376,6 +3376,76 @@
       }
     },
     {
+      "id": "cablecar",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "==",
+        "class",
+        "cable_car"
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "hsl(0, 0%, 70%)",
+        "line-width": {
+          "base": 1,
+          "stops": [
+            [
+              11,
+              1
+            ],
+            [
+              19,
+              2.5
+            ]
+          ]
+        }
+      },
+      "maxzoom": 24
+    },
+    {
+      "id": "cablecar-dash",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 13,
+      "filter": [
+        "==",
+        "class",
+        "cable_car"
+      ],
+      "layout": {
+        "visibility": "visible",
+        "line-cap": "round"
+      },
+      "paint": {
+        "line-color": "hsl(0, 0%, 70%)",
+        "line-width": {
+          "base": 1,
+          "stops": [
+            [
+              11,
+              3
+            ],
+            [
+              19,
+              5.5
+            ]
+          ]
+        },
+        "line-dasharray": [
+          2,
+          3
+        ]
+      },
+      "maxzoom": 24
+    },
+    {
       "id": "boundary-land-level-4",
       "type": "line",
       "source": "openmaptiles",
