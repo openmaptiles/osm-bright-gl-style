@@ -4315,6 +4315,46 @@
       }
     },
     {
+      "id": "airport-label-major",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "aerodrome_label",
+      "minzoom": 10,
+      "filter": [
+        "all",
+        [
+          "has",
+          "iata"
+        ]
+      ],
+      "layout": {
+        "text-padding": 2,
+        "text-font": [
+          "Open Sans Regular",
+          "Klokantech Noto Sans Regular",
+          "Klokantech Noto Sans CJK Regular"
+        ],
+        "text-anchor": "top",
+        "icon-image": "airport_11",
+        "text-field": "{name}",
+        "text-offset": [
+          0,
+          0.6
+        ],
+        "text-size": 12,
+        "text-max-width": 9,
+        "visibility": "visible",
+        "icon-size": 1,
+        "text-optional": true
+      },
+      "paint": {
+        "text-halo-blur": 0.5,
+        "text-color": "#666",
+        "text-halo-width": 1,
+        "text-halo-color": "#ffffff"
+      }
+    },
+    {
       "id": "place-other",
       "type": "symbol",
       "metadata": {
@@ -4393,7 +4433,8 @@
           ]
         },
         "text-field": "{name_en}",
-        "text-max-width": 8
+        "text-max-width": 8,
+        "visibility": "visible"
       },
       "paint": {
         "text-color": "#333",
@@ -4434,7 +4475,8 @@
           ]
         },
         "text-field": "{name_en}",
-        "text-max-width": 8
+        "text-max-width": 8,
+        "visibility": "visible"
       },
       "paint": {
         "text-color": "#333",
@@ -4483,7 +4525,8 @@
           ]
         },
         "text-field": "{name_en}",
-        "text-max-width": 8
+        "text-max-width": 8,
+        "visibility": "visible"
       },
       "paint": {
         "text-color": "#333",
@@ -4539,7 +4582,8 @@
           0
         ],
         "icon-size": 0.8,
-        "text-anchor": "left"
+        "text-anchor": "left",
+        "visibility": "visible"
       },
       "paint": {
         "text-color": "#333",
