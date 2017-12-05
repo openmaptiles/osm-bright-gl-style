@@ -1241,6 +1241,32 @@
       }
     },
     {
+      "id": "ferry",
+      "type": "line",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        [
+          "in",
+          "class",
+          "ferry"
+        ]
+      ],
+      "layout": {
+        "line-join": "round",
+        "visibility": "visible"
+      },
+      "paint": {
+        "line-color": "rgba(108, 159, 182, 1)",
+        "line-width": 1.1,
+        "line-dasharray": [
+          2,
+          2
+        ]
+      }
+    },
+    {
       "id": "aeroway-taxiway-casing",
       "type": "line",
       "metadata": {
@@ -4202,7 +4228,8 @@
         ],
         "text-field": "{name_en}",
         "text-transform": "uppercase",
-        "text-max-width": 9
+        "text-max-width": 9,
+        "visibility": "visible"
       },
       "paint": {
         "text-color": "#633",
@@ -4442,7 +4469,8 @@
           ]
         },
         "text-transform": "uppercase",
-        "text-max-width": 6.25
+        "text-max-width": 6.25,
+        "visibility": "visible"
       },
       "paint": {
         "text-halo-blur": 1,
