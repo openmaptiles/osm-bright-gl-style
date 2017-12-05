@@ -3475,7 +3475,10 @@
       },
       "paint": {
         "line-color": "hsl(248, 7%, 70%)",
-        "line-dasharray": [1, 3],
+        "line-dasharray": [
+          1,
+          3
+        ],
         "line-width": {
           "base": 1,
           "stops": [
@@ -4395,6 +4398,60 @@
       }
     },
     {
+      "id": "place-country-other",
+      "type": "symbol",
+      "metadata": {
+        "mapbox:group": "1444849242106.713"
+      },
+      "source": "openmaptiles",
+      "source-layer": "place",
+      "filter": [
+        "all",
+        [
+          "==",
+          "class",
+          "country"
+        ],
+        [
+          ">=",
+          "rank",
+          3
+        ],
+        [
+          "!has",
+          "iso_a2"
+        ]
+      ],
+      "layout": {
+        "text-font": [
+          "Open Sans Italic",
+          "Klokantech Noto Sans Italic",
+          "Klokantech Noto Sans CJK Regular"
+        ],
+        "text-field": "{name_en}",
+        "text-size": {
+          "stops": [
+            [
+              3,
+              11
+            ],
+            [
+              7,
+              17
+            ]
+          ]
+        },
+        "text-transform": "uppercase",
+        "text-max-width": 6.25
+      },
+      "paint": {
+        "text-halo-blur": 1,
+        "text-color": "#334",
+        "text-halo-width": 2,
+        "text-halo-color": "rgba(255,255,255,0.8)"
+      }
+    },
+    {
       "id": "place-country-3",
       "type": "symbol",
       "metadata": {
@@ -4413,6 +4470,10 @@
           ">=",
           "rank",
           3
+        ],
+        [
+          "has",
+          "iso_a2"
         ]
       ],
       "layout": {
@@ -4435,7 +4496,8 @@
           ]
         },
         "text-transform": "uppercase",
-        "text-max-width": 6.25
+        "text-max-width": 6.25,
+        "visibility": "visible"
       },
       "paint": {
         "text-halo-blur": 1,
@@ -4463,6 +4525,10 @@
           "==",
           "rank",
           2
+        ],
+        [
+          "has",
+          "iso_a2"
         ]
       ],
       "layout": {
@@ -4485,7 +4551,8 @@
           ]
         },
         "text-transform": "uppercase",
-        "text-max-width": 6.25
+        "text-max-width": 6.25,
+        "visibility": "visible"
       },
       "paint": {
         "text-halo-blur": 1,
@@ -4513,6 +4580,10 @@
           "==",
           "rank",
           1
+        ],
+        [
+          "has",
+          "iso_a2"
         ]
       ],
       "layout": {
@@ -4535,7 +4606,8 @@
           ]
         },
         "text-transform": "uppercase",
-        "text-max-width": 6.25
+        "text-max-width": 6.25,
+        "visibility": "visible"
       },
       "paint": {
         "text-halo-blur": 1,
@@ -4567,7 +4639,8 @@
         "text-field": "{name_en}",
         "text-size": 14,
         "text-max-width": 6.25,
-        "text-transform": "uppercase"
+        "text-transform": "uppercase",
+        "visibility": "visible"
       },
       "paint": {
         "text-halo-blur": 1,
