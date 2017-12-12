@@ -7,7 +7,11 @@
   ],
   "decorators": [
     {
-      "layout.text-field": "{name:latin}\n{name:nonlatin}"
+      "layout.text-field": "{name:latin}\n{name:nonlatin}",
+      "filter-all-part": [
+        "has",
+        "name"
+      ]
     }
   ]
 }
