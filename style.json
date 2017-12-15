@@ -3745,7 +3745,7 @@
           "Noto Sans Italic"
         ],
         "text-size": 14,
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:latin}",
         "text-max-width": 5,
         "text-rotation-alignment": "map",
         "symbol-placement": "point",
@@ -4337,7 +4337,9 @@
         "class",
         "city",
         "town",
-        "village"
+        "village",
+        "country",
+        "continent"
       ],
       "layout": {
         "text-letter-spacing": 0.1,
@@ -4360,7 +4362,7 @@
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-transform": "uppercase",
         "text-max-width": 9,
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "text-color": "#633",
@@ -4400,7 +4402,7 @@
         },
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-max-width": 8,
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "text-color": "#333",
@@ -4440,7 +4442,7 @@
         },
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-max-width": 8,
-        "visibility": "visible"
+        "visibility": "none"
       },
       "paint": {
         "text-color": "#333",
@@ -4580,7 +4582,7 @@
         "text-font": [
           "Noto Sans Italic"
         ],
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:latin}",
         "text-size": {
           "stops": [
             [
@@ -4633,7 +4635,7 @@
         "text-font": [
           "Noto Sans Bold"
         ],
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:latin}",
         "text-size": {
           "stops": [
             [
@@ -4686,7 +4688,7 @@
         "text-font": [
           "Noto Sans Bold"
         ],
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:latin}",
         "text-size": {
           "stops": [
             [
@@ -4739,7 +4741,7 @@
         "text-font": [
           "Noto Sans Bold"
         ],
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:latin}",
         "text-size": {
           "stops": [
             [
@@ -4781,7 +4783,7 @@
         "text-font": [
           "Noto Sans Bold"
         ],
-        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-field": "{name:latin}",
         "text-size": 14,
         "text-max-width": 6.25,
         "text-transform": "uppercase",
