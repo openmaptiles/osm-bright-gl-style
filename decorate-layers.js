@@ -13,7 +13,7 @@ exports.cfg = {
         && [
             "{name:latin} {name:nonlatin}",
             "{name:latin}\n{name:nonlatin}"
-        ].includes(layer.layout['text-field'])
+        ].indexOf(layer.layout['text-field']) >= 0
         &&
         (layer.minzoom || 0) < MAX_LATIN_ZOOM
   },
