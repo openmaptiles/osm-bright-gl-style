@@ -4362,7 +4362,7 @@
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-transform": "uppercase",
         "text-max-width": 9,
-        "visibility": "none"
+        "visibility": "visible"
       },
       "paint": {
         "text-color": "#633",
@@ -4402,7 +4402,7 @@
         },
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-max-width": 8,
-        "visibility": "none"
+        "visibility": "visible"
       },
       "paint": {
         "text-color": "#333",
@@ -4442,7 +4442,7 @@
         },
         "text-field": "{name:latin}\n{name:nonlatin}",
         "text-max-width": 8,
-        "visibility": "none"
+        "visibility": "visible"
       },
       "paint": {
         "text-color": "#333",
