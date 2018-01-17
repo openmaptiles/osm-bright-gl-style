@@ -3381,6 +3381,7 @@
       "source": "openmaptiles",
       "source-layer": "transportation",
       "minzoom": 13,
+      "maxzoom": 24,
       "filter": [
         "==",
         "class",
@@ -3405,8 +3406,7 @@
             ]
           ]
         }
-      },
-      "maxzoom": 24
+      }
     },
     {
       "id": "cablecar-dash",
@@ -3414,6 +3414,7 @@
       "source": "openmaptiles",
       "source-layer": "transportation",
       "minzoom": 13,
+      "maxzoom": 24,
       "filter": [
         "==",
         "class",
@@ -3442,8 +3443,7 @@
           2,
           3
         ]
-      },
-      "maxzoom": 24
+      }
     },
     {
       "id": "boundary-land-level-4",
