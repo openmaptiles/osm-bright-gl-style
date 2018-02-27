@@ -3381,7 +3381,6 @@
       "source": "openmaptiles",
       "source-layer": "transportation",
       "minzoom": 13,
-      "maxzoom": 24,
       "filter": [
         "==",
         "class",
@@ -3414,7 +3413,6 @@
       "source": "openmaptiles",
       "source-layer": "transportation",
       "minzoom": 13,
-      "maxzoom": 24,
       "filter": [
         "==",
         "class",
@@ -3944,7 +3942,6 @@
       "source": "openmaptiles",
       "source-layer": "poi",
       "minzoom": 13,
-      "maxzoom": 24,
       "filter": [
         "all",
         [
