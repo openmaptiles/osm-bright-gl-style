@@ -1732,7 +1732,7 @@
         ]
       ],
       "layout": {
-        "line-cap": "round",
+        "line-cap": "butt",
         "line-join": "round",
         "visibility": "visible"
       },
@@ -1778,7 +1778,7 @@
         ]
       ],
       "layout": {
-        "line-cap": "round",
+        "line-cap": "butt",
         "line-join": "round",
         "visibility": "visible"
       },
@@ -1843,7 +1843,7 @@
         ]
       ],
       "layout": {
-        "line-cap": "round",
+        "line-cap": "butt",
         "line-join": "round",
         "visibility": "visible"
       },
@@ -1908,7 +1908,7 @@
         ]
       ],
       "layout": {
-        "line-cap": "round",
+        "line-cap": "butt",
         "line-join": "round",
         "visibility": "visible"
       },
