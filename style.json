@@ -3993,6 +3993,104 @@
       }
     },
     {
+      "id": "road_oneway",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        [
+          "==",
+          "oneway",
+          1
+        ],
+        [
+          "in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "secondary",
+          "tertiary",
+          "minor",
+          "service"
+        ]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "oneway",
+        "symbol-spacing": 75,
+        "icon-padding": 2,
+        "icon-rotation-alignment": "map",
+        "icon-rotate": 90,
+        "icon-size": {
+          "stops": [
+            [
+              15,
+              0.5
+            ],
+            [
+              19,
+              1
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
+      "id": "road_oneway_opposite",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        [
+          "==",
+          "oneway",
+          -1
+        ],
+        [
+          "in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "secondary",
+          "tertiary",
+          "minor",
+          "service"
+        ]
+      ],
+      "layout": {
+        "symbol-placement": "line",
+        "icon-image": "oneway",
+        "symbol-spacing": 75,
+        "icon-padding": 2,
+        "icon-rotation-alignment": "map",
+        "icon-rotate": -90,
+        "icon-size": {
+          "stops": [
+            [
+              15,
+              0.5
+            ],
+            [
+              19,
+              1
+            ]
+          ]
+        }
+      },
+      "paint": {
+        "icon-opacity": 0.5
+      }
+    },
+    {
       "id": "highway-name-path",
       "type": "symbol",
       "source": "openmaptiles",
