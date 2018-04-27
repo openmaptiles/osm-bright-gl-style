@@ -3512,10 +3512,13 @@
       "filter": [
         "all",
         [
-          "in",
+          ">=",
           "admin_level",
-          4,
-          6,
+          4
+        ],
+        [
+          "<=",
+          "admin_level",
           8
         ],
         [
