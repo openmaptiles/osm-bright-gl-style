@@ -4477,6 +4477,54 @@
       }
     },
     {
+      "id": "park-label",
+      "type": "symbol",
+      "metadata": {
+        "mapbox:group": "1444849242106.713"
+      },
+      "source": "openmaptiles",
+      "source-layer": "park_label",
+      "filter": [
+        "all",
+        [
+          "==",
+          "rank",
+          1
+        ]
+      ],
+      "layout": {
+        "text-letter-spacing": 0.1,
+        "text-size": {
+          "base": 1.2,
+          "stops": [
+            [
+              12,
+              10
+            ],
+            [
+              15,
+              14
+            ]
+          ]
+        },
+        "text-font": [
+          "Noto Sans Bold"
+        ],
+        "text-field": "{name:latin}\n{name:nonlatin}",
+        "text-transform": "none",
+        "text-max-width": 9,
+        "visibility": "visible",
+        "text-allow-overlap": false,
+        "text-ignore-placement": false
+      },
+      "paint": {
+        "text-color": "rgba(38, 92, 46, 1)",
+        "text-halo-width": 1.2,
+        "text-halo-color": "rgba(255,255,255,0.8)"
+      },
+      "minzoom": 0
+    },
+    {
       "id": "place-other",
       "type": "symbol",
       "metadata": {
