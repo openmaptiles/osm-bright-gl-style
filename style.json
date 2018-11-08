@@ -4483,13 +4483,18 @@
         "mapbox:group": "1444849242106.713"
       },
       "source": "openmaptiles",
-      "source-layer": "park_label",
+      "source-layer": "park",
       "filter": [
         "all",
         [
           "==",
           "rank",
           1
+        ],
+        [
+          "==",
+          "$type",
+          "Point"
         ]
       ],
       "layout": {
