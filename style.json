@@ -418,7 +418,7 @@
       "fill-pattern": "wave",
       "fill-translate": [0, 2.5]
     },
-    "source": "openmaptiles_multiple_areas",
+    "source": "openmaptiles",
     "source-layer": "water",
     "type": "fill",
     "filter": ["all"]
