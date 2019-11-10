@@ -414,7 +414,8 @@
         "line-width": {
           "base": 1.2,
           "stops": [[12, 0.5], [13, 1], [14, 4], [20, 15]]
-        }
+        },
+        "line-dasharray": [0.5, 0.25]
       }
     },
     {
@@ -432,7 +433,8 @@
       "paint": {
         "line-color": "#e9ac77",
         "line-opacity": 1,
-        "line-width": {"base": 1.2, "stops": [[8, 1.5], [20, 17]]}
+        "line-width": {"base": 1.2, "stops": [[8, 1.5], [20, 17]]},
+        "line-dasharray": [0.5, 0.25]
       }
     },
     {
