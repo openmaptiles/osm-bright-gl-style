@@ -2060,14 +2060,14 @@
       "source": "openmaptiles",
       "source-layer": "place",
       "filter": [
-          "!in",
-          "class",
-          "city",
-          "town",
-          "village",
-          "state",
-          "country",
-          "continent"
+        "!in",
+        "class",
+        "city",
+        "town",
+        "village",
+        "state",
+        "country",
+        "continent"
       ],
       "layout": {
         "text-field": "{name:latin}\n{name:nonlatin}",
