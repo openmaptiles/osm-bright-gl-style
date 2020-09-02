@@ -404,6 +404,28 @@
       }
     },
     {
+      "id": "tunnel-motorway-link-casing",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849354174.1904"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["==", "class", "motorway"],
+        ["==", "ramp", 1]
+      ],
+      "layout": {"line-join": "round", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(200, 147, 102, 1)",
+        "line-dasharray": [0.5, 0.25],
+        "line-width": {
+          "base": 1.2,
+          "stops": [[12, 1], [13, 3], [14, 4], [20, 15]]
+        }
+      }
+    },
+    {
       "id": "tunnel-minor-casing",
       "type": "line",
       "metadata": {"mapbox:group": "1444849354174.1904"},
@@ -422,6 +444,29 @@
       }
     },
     {
+      "id": "tunnel-link-casing",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849354174.1904"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["in", "class", "trunk", "primary", "secondary", "tertiary"],
+        ["==", "ramp", 1]
+      ],
+      "layout": {"line-join": "round"},
+      "paint": {
+        "line-color": "#e9ac77",
+        "line-opacity": 1,
+        "line-width": {
+          "base": 1.2,
+          "stops": [[12, 1], [13, 3], [14, 4], [20, 15]]
+        },
+        "line-dasharray": [0.5, 0.25]
+      }
+    },
+    {
       "id": "tunnel-secondary-tertiary-casing",
       "type": "line",
       "metadata": {"mapbox:group": "1444849354174.1904"},
@@ -430,7 +475,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["in", "class", "secondary", "tertiary"]
+        ["in", "class", "secondary", "tertiary"],
+        ["!=", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -449,7 +495,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["in", "class", "primary", "trunk"]
+        ["in", "class", "primary", "trunk"],
+        ["!=", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -469,7 +516,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "class", "motorway"]
+        ["==", "class", "motorway"],
+        ["!=", "ramp", 1]
       ],
       "layout": {"line-join": "round", "visibility": "visible"},
       "paint": {
@@ -500,6 +548,27 @@
       }
     },
     {
+      "id": "tunnel-motorway-link",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849354174.1904"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["==", "class", "motorway"],
+        ["==", "ramp", 1]
+      ],
+      "layout": {"line-join": "round", "visibility": "visible"},
+      "paint": {
+        "line-color": "rgba(244, 209, 158, 1)",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
+        }
+      }
+    },
+    {
       "id": "tunnel-service-track",
       "type": "line",
       "metadata": {"mapbox:group": "1444849354174.1904"},
@@ -514,6 +583,27 @@
       "paint": {
         "line-color": "#fff",
         "line-width": {"base": 1.2, "stops": [[15.5, 0], [16, 2], [20, 7.5]]}
+      }
+    },
+    {
+      "id": "tunnel-link",
+      "type": "line",
+      "metadata": {"mapbox:group": "1444849354174.1904"},
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "filter": [
+        "all",
+        ["==", "brunnel", "tunnel"],
+        ["in", "class", "trunk", "primary", "secondary", "tertiary"],
+        ["==", "ramp", 1]
+      ],
+      "layout": {"line-join": "round"},
+      "paint": {
+        "line-color": "#fff4c6",
+        "line-width": {
+          "base": 1.2,
+          "stops": [[12.5, 0], [13, 1.5], [14, 2.5], [20, 11.5]]
+        }
       }
     },
     {
@@ -543,7 +633,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["in", "class", "secondary", "tertiary"]
+        ["in", "class", "secondary", "tertiary"],
+        ["!=", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -560,7 +651,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["in", "class", "primary", "trunk"]
+        ["in", "class", "primary", "trunk"],
+        ["!=", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -577,7 +669,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "tunnel"],
-        ["==", "class", "motorway"]
+        ["==", "class", "motorway"],
+        ["!=", "ramp", 1]
       ],
       "layout": {"line-join": "round", "visibility": "visible"},
       "paint": {
@@ -761,7 +854,8 @@
       "filter": [
         "all",
         ["!in", "brunnel", "bridge", "tunnel"],
-        ["==", "class", "motorway_link"]
+        ["==", "class", "motorway"],
+        ["==", "ramp", 1]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -783,14 +877,8 @@
       "filter": [
         "all",
         ["!in", "brunnel", "bridge", "tunnel"],
-        [
-          "in",
-          "class",
-          "primary_link",
-          "secondary_link",
-          "tertiary_link",
-          "trunk_link"
-        ]
+        ["in", "class", "trunk", "primary", "secondary", "tertiary"],
+        ["==", "ramp", 1]
       ],
       "layout": {
         "line-cap": "round",
@@ -837,7 +925,8 @@
       "filter": [
         "all",
         ["!in", "brunnel", "bridge", "tunnel"],
-        ["in", "class", "secondary", "tertiary"]
+        ["in", "class", "secondary", "tertiary"],
+        ["!=", "ramp", 1]
       ],
       "layout": {
         "line-cap": "butt",
@@ -860,7 +949,8 @@
       "filter": [
         "all",
         ["!in", "brunnel", "bridge", "tunnel"],
-        ["in", "class", "primary"]
+        ["in", "class", "primary"],
+        ["!=", "ramp", 1]
       ],
       "layout": {
         "line-cap": "butt",
@@ -886,7 +976,8 @@
       "filter": [
         "all",
         ["!in", "brunnel", "bridge", "tunnel"],
-        ["in", "class", "trunk"]
+        ["in", "class", "trunk"],
+        ["!=", "ramp", 1]
       ],
       "layout": {
         "line-cap": "butt",
@@ -912,7 +1003,8 @@
       "filter": [
         "all",
         ["!in", "brunnel", "bridge", "tunnel"],
-        ["==", "class", "motorway"]
+        ["==", "class", "motorway"],
+        ["!=", "ramp", 1]
       ],
       "layout": {
         "line-cap": "butt",
@@ -956,7 +1048,8 @@
       "filter": [
         "all",
         ["!in", "brunnel", "bridge", "tunnel"],
-        ["==", "class", "motorway_link"]
+        ["==", "class", "motorway"],
+        ["==", "ramp", 1]
       ],
       "layout": {"line-cap": "round", "line-join": "round"},
       "paint": {
@@ -977,14 +1070,8 @@
       "filter": [
         "all",
         ["!in", "brunnel", "bridge", "tunnel"],
-        [
-          "in",
-          "class",
-          "primary_link",
-          "secondary_link",
-          "tertiary_link",
-          "trunk_link"
-        ]
+        ["in", "class", "trunk", "primary", "secondary", "tertiary"],
+        ["==", "ramp", 1]
       ],
       "layout": {
         "line-cap": "round",
@@ -1027,7 +1114,8 @@
       "filter": [
         "all",
         ["!in", "brunnel", "bridge", "tunnel"],
-        ["in", "class", "secondary", "tertiary"]
+        ["in", "class", "secondary", "tertiary"],
+        ["!=", "ramp", 1]
       ],
       "layout": {
         "line-cap": "round",
@@ -1049,7 +1137,8 @@
         "all",
         ["==", "$type", "LineString"],
         ["!in", "brunnel", "bridge", "tunnel"],
-        ["in", "class", "primary"]
+        ["in", "class", "primary"],
+        ["!=", "ramp", 1]
       ],
       "layout": {
         "line-cap": "round",
@@ -1071,7 +1160,8 @@
         "all",
         ["==", "$type", "LineString"],
         ["!in", "brunnel", "bridge", "tunnel"],
-        ["in", "class", "trunk"]
+        ["in", "class", "trunk"],
+        ["!=", "ramp", 1]
       ],
       "layout": {
         "line-cap": "round",
@@ -1094,7 +1184,8 @@
         "all",
         ["==", "$type", "LineString"],
         ["!in", "brunnel", "bridge", "tunnel"],
-        ["==", "class", "motorway"]
+        ["==", "class", "motorway"],
+        ["!=", "ramp", 1]
       ],
       "layout": {
         "line-cap": "round",
@@ -1225,7 +1316,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["==", "class", "motorway_link"]
+        ["==", "class", "motorway"],
+        ["==", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -1246,14 +1338,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        [
-          "in",
-          "class",
-          "primary_link",
-          "secondary_link",
-          "tertiary_link",
-          "trunk_link"
-        ]
+        ["in", "class", "trunk", "primary", "secondary", "tertiary"],
+        ["==", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -1261,7 +1347,7 @@
         "line-opacity": 1,
         "line-width": {
           "base": 1.2,
-          "stops": [[12, 1], [13, 3], [14, 4], [20, 15]]
+          "stops": [[12, 1], [13, 3], [14, 4], [20, 19]]
         }
       }
     },
@@ -1274,7 +1360,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "class", "secondary", "tertiary"]
+        ["in", "class", "secondary", "tertiary"],
+        ["!=", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -1292,7 +1379,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "class", "primary", "trunk"]
+        ["in", "class", "primary", "trunk"],
+        ["!=", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -1312,7 +1400,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["==", "class", "motorway"]
+        ["==", "class", "motorway"],
+        ["!=", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -1389,7 +1478,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["==", "class", "motorway_link"]
+        ["==", "class", "motorway"],
+        ["==", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -1409,14 +1499,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        [
-          "in",
-          "class",
-          "primary_link",
-          "secondary_link",
-          "tertiary_link",
-          "trunk_link"
-        ]
+        ["in", "class", "trunk", "primary", "secondary", "tertiary"],
+        ["==", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -1455,7 +1539,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "class", "secondary", "tertiary"]
+        ["in", "class", "secondary", "tertiary"],
+        ["!=", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -1472,7 +1557,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["in", "class", "primary", "trunk"]
+        ["in", "class", "primary", "trunk"],
+        ["!=", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
@@ -1489,7 +1575,8 @@
       "filter": [
         "all",
         ["==", "brunnel", "bridge"],
-        ["==", "class", "motorway"]
+        ["==", "class", "motorway"],
+        ["!=", "ramp", 1]
       ],
       "layout": {"line-join": "round"},
       "paint": {
