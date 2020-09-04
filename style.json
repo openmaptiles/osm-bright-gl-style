@@ -1646,7 +1646,7 @@
       "source-layer": "boundary",
       "filter": [
         "all",
-        [">=", "admin_level", 4],
+        [">=", "admin_level", 3],
         ["<=", "admin_level", 8],
         ["!=", "maritime", 1]
       ],
