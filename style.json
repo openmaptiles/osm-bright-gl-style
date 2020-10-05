@@ -1618,7 +1618,7 @@
       "source": "openmaptiles",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["==", "class", "cable_car"],
+      "filter": ["==", "subclass", "cable_car"],
       "layout": {"line-cap": "round", "visibility": "visible"},
       "paint": {
         "line-color": "hsl(0, 0%, 70%)",
@@ -1631,7 +1631,7 @@
       "source": "openmaptiles",
       "source-layer": "transportation",
       "minzoom": 13,
-      "filter": ["==", "class", "cable_car"],
+      "filter": ["==", "subclass", "cable_car"],
       "layout": {"line-cap": "round", "visibility": "visible"},
       "paint": {
         "line-color": "hsl(0, 0%, 70%)",
