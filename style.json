@@ -2294,11 +2294,7 @@
       "metadata": {"mapbox:group": "1444849242106.713"},
       "source": "openmaptiles",
       "source-layer": "place",
-      "filter": [
-        "in",
-        "class",
-        "state"
-      ],
+      "filter": ["in", "class", "state"],
       "layout": {
         "text-field": "{name:latin}",
         "text-font": ["Noto Sans Bold"],
