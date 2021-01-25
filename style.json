@@ -1644,6 +1644,7 @@
       "type": "line",
       "source": "openmaptiles",
       "source-layer": "boundary",
+      "minzoom": 2,
       "filter": [
         "all",
         [">=", "admin_level", 3],
