@@ -1814,6 +1814,70 @@
       }
     },
     {
+      "id": "road_oneway",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        ["==", "oneway", 1],
+        [
+          "in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "secondary",
+          "tertiary",
+          "minor",
+          "service"
+        ]
+      ],
+      "layout": {
+        "icon-image": "oneway",
+        "icon-padding": 2,
+        "icon-rotate": 90,
+        "icon-rotation-alignment": "map",
+        "icon-size": {"stops": [[15, 0.5], [19, 1]]},
+        "symbol-placement": "line",
+        "symbol-spacing": 75
+      },
+      "paint": {"icon-opacity": 0.5}
+    },
+    {
+      "id": "road_oneway_opposite",
+      "type": "symbol",
+      "source": "openmaptiles",
+      "source-layer": "transportation",
+      "minzoom": 15,
+      "filter": [
+        "all",
+        ["==", "oneway", -1],
+        [
+          "in",
+          "class",
+          "motorway",
+          "trunk",
+          "primary",
+          "secondary",
+          "tertiary",
+          "minor",
+          "service"
+        ]
+      ],
+      "layout": {
+        "icon-image": "oneway",
+        "icon-padding": 2,
+        "icon-rotate": -90,
+        "icon-rotation-alignment": "map",
+        "icon-size": {"stops": [[15, 0.5], [19, 1]]},
+        "symbol-placement": "line",
+        "symbol-spacing": 75
+      },
+      "paint": {"icon-opacity": 0.5}
+    },
+    {
       "id": "poi-level-3",
       "type": "symbol",
       "source": "openmaptiles",
@@ -1940,70 +2004,6 @@
         "text-halo-color": "#ffffff",
         "text-halo-width": 1
       }
-    },
-    {
-      "id": "road_oneway",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "minzoom": 15,
-      "filter": [
-        "all",
-        ["==", "oneway", 1],
-        [
-          "in",
-          "class",
-          "motorway",
-          "trunk",
-          "primary",
-          "secondary",
-          "tertiary",
-          "minor",
-          "service"
-        ]
-      ],
-      "layout": {
-        "icon-image": "oneway",
-        "icon-padding": 2,
-        "icon-rotate": 90,
-        "icon-rotation-alignment": "map",
-        "icon-size": {"stops": [[15, 0.5], [19, 1]]},
-        "symbol-placement": "line",
-        "symbol-spacing": 75
-      },
-      "paint": {"icon-opacity": 0.5}
-    },
-    {
-      "id": "road_oneway_opposite",
-      "type": "symbol",
-      "source": "openmaptiles",
-      "source-layer": "transportation",
-      "minzoom": 15,
-      "filter": [
-        "all",
-        ["==", "oneway", -1],
-        [
-          "in",
-          "class",
-          "motorway",
-          "trunk",
-          "primary",
-          "secondary",
-          "tertiary",
-          "minor",
-          "service"
-        ]
-      ],
-      "layout": {
-        "icon-image": "oneway",
-        "icon-padding": 2,
-        "icon-rotate": -90,
-        "icon-rotation-alignment": "map",
-        "icon-size": {"stops": [[15, 0.5], [19, 1]]},
-        "symbol-placement": "line",
-        "symbol-spacing": 75
-      },
-      "paint": {"icon-opacity": 0.5}
     },
     {
       "id": "highway-name-path",
