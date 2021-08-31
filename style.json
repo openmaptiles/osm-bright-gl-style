@@ -612,11 +612,7 @@
       "metadata": {"mapbox:group": "1444849354174.1904"},
       "source": "openmaptiles",
       "source-layer": "transportation",
-      "filter": [
-        "all",
-        ["==", "brunnel", "tunnel"],
-        ["==", "class", "minor_road"]
-      ],
+      "filter": ["all", ["==", "brunnel", "tunnel"], ["==", "class", "minor"]],
       "layout": {"line-join": "round"},
       "paint": {
         "line-color": "#fff",
