@@ -356,7 +356,7 @@
       "metadata": {"mapbox:group": "1444849382550.77"},
       "source": "openmaptiles",
       "source-layer": "landcover",
-      "filter": ["all", ["==", "class", "sand"]],
+      "filter": ["==", "class", "sand"],
       "layout": {"visibility": "visible"},
       "paint": {"fill-color": "rgba(245, 238, 188, 1)", "fill-opacity": 1}
     },
