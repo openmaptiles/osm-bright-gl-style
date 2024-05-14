@@ -28,7 +28,7 @@
     }
   },
   "sprite": "https://openmaptiles.github.io/osm-bright-gl-style/sprite",
-  "glyphs": "https://api.maptiler.com/fonts/{fontstack}/{range}.pbf?key={key}",
+  "glyphs": "https://fonts.openmaptiles.org/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
@@ -1847,7 +1847,7 @@
         "symbol-placement": "line",
         "symbol-spacing": 350,
         "text-field": "{name:latin} {name:nonlatin}",
-        "text-font": ["Noto Sans Italic"],
+        "text-font": ["Klokantech Noto Sans Italic"],
         "text-letter-spacing": 0.2,
         "text-max-width": 5,
         "text-rotation-alignment": "map",
@@ -1869,7 +1869,7 @@
         "symbol-placement": "line",
         "symbol-spacing": 350,
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Italic"],
+        "text-font": ["Klokantech Noto Sans Italic"],
         "text-letter-spacing": 0.2,
         "text-max-width": 5,
         "text-rotation-alignment": "map",
@@ -1891,7 +1891,7 @@
         "symbol-placement": "point",
         "symbol-spacing": 350,
         "text-field": "{name:latin}",
-        "text-font": ["Noto Sans Italic"],
+        "text-font": ["Klokantech Noto Sans Italic"],
         "text-letter-spacing": 0.2,
         "text-max-width": 5,
         "text-rotation-alignment": "map",
@@ -1913,7 +1913,7 @@
         "symbol-placement": "point",
         "symbol-spacing": 350,
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Italic"],
+        "text-font": ["Klokantech Noto Sans Italic"],
         "text-letter-spacing": 0.2,
         "text-max-width": 5,
         "text-rotation-alignment": "map",
@@ -2006,7 +2006,7 @@
         "icon-image": "{class}_11",
         "text-anchor": "top",
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-max-width": 9,
         "text-offset": [0, 0.6],
         "text-padding": 2,
@@ -2037,7 +2037,7 @@
         "icon-image": "{class}_11",
         "text-anchor": "top",
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-max-width": 9,
         "text-offset": [0, 0.6],
         "text-padding": 2,
@@ -2068,7 +2068,7 @@
         "icon-image": "{class}_11",
         "text-anchor": "top",
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-max-width": 9,
         "text-offset": [0, 0.6],
         "text-padding": 2,
@@ -2103,7 +2103,7 @@
         "text-allow-overlap": false,
         "text-anchor": "top",
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-ignore-placement": false,
         "text-max-width": 9,
         "text-offset": [0, 0.6],
@@ -2128,7 +2128,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": "{name:latin} {name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-rotation-alignment": "map",
         "text-size": {"base": 1, "stops": [[13, 12], [14, 13]]}
       },
@@ -2152,7 +2152,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": "{name:latin} {name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-rotation-alignment": "map",
         "text-size": {"base": 1, "stops": [[13, 12], [14, 13]]}
       },
@@ -2172,7 +2172,7 @@
       "layout": {
         "symbol-placement": "line",
         "text-field": "{name:latin} {name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-rotation-alignment": "map",
         "text-size": {"base": 1, "stops": [[13, 12], [14, 13]]}
       },
@@ -2201,7 +2201,7 @@
         "symbol-placement": {"base": 1, "stops": [[10, "point"], [11, "line"]]},
         "symbol-spacing": 200,
         "text-field": "{ref}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-rotation-alignment": "viewport",
         "text-size": 10
       },
@@ -2229,7 +2229,7 @@
         },
         "symbol-spacing": 200,
         "text-field": "{ref}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-rotation-alignment": "viewport",
         "text-size": 10
       },
@@ -2254,7 +2254,7 @@
         "symbol-placement": {"base": 1, "stops": [[10, "point"], [11, "line"]]},
         "symbol-spacing": 200,
         "text-field": "{ref}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-rotation-alignment": "viewport",
         "text-size": 10
       },
@@ -2272,7 +2272,7 @@
         "icon-size": 1,
         "text-anchor": "top",
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-max-width": 9,
         "text-offset": [0, 0.6],
         "text-optional": true,
@@ -2305,7 +2305,7 @@
       ],
       "layout": {
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Bold"],
+        "text-font": ["Klokantech Noto Sans Bold"],
         "text-letter-spacing": 0.1,
         "text-max-width": 9,
         "text-size": {"base": 1.2, "stops": [[12, 10], [15, 14]]},
@@ -2327,7 +2327,7 @@
       "filter": ["==", "class", "village"],
       "layout": {
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-max-width": 8,
         "text-size": {"base": 1.2, "stops": [[10, 12], [15, 22]]},
         "visibility": "visible"
@@ -2347,7 +2347,7 @@
       "filter": ["==", "class", "town"],
       "layout": {
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-max-width": 8,
         "text-size": {"base": 1.2, "stops": [[10, 14], [15, 24]]},
         "visibility": "visible"
@@ -2367,7 +2367,7 @@
       "filter": ["all", ["!=", "capital", 2], ["==", "class", "city"]],
       "layout": {
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-max-width": 8,
         "text-size": {"base": 1.2, "stops": [[7, 14], [11, 24]]},
         "visibility": "visible"
@@ -2390,7 +2390,7 @@
         "icon-size": 0.8,
         "text-anchor": "left",
         "text-field": "{name:latin}\n{name:nonlatin}",
-        "text-font": ["Noto Sans Regular"],
+        "text-font": ["Klokantech Noto Sans Regular"],
         "text-max-width": 8,
         "text-offset": [0.4, 0],
         "text-size": {"base": 1.2, "stops": [[7, 14], [11, 24]]},
@@ -2411,7 +2411,7 @@
       "filter": ["in", "class", "state"],
       "layout": {
         "text-field": "{name:latin}",
-        "text-font": ["Noto Sans Bold"],
+        "text-font": ["Klokantech Noto Sans Bold"],
         "text-letter-spacing": 0.1,
         "text-max-width": 9,
         "text-size": {"base": 1.2, "stops": [[12, 10], [15, 14]]},
@@ -2438,7 +2438,7 @@
       ],
       "layout": {
         "text-field": "{name:latin}",
-        "text-font": ["Noto Sans Italic"],
+        "text-font": ["Klokantech Noto Sans Italic"],
         "text-max-width": 6.25,
         "text-size": {"stops": [[3, 11], [7, 17]]},
         "text-transform": "uppercase",
@@ -2465,7 +2465,7 @@
       ],
       "layout": {
         "text-field": "{name:latin}",
-        "text-font": ["Noto Sans Bold"],
+        "text-font": ["Klokantech Noto Sans Bold"],
         "text-max-width": 6.25,
         "text-size": {"stops": [[3, 11], [7, 17]]},
         "text-transform": "uppercase",
@@ -2492,7 +2492,7 @@
       ],
       "layout": {
         "text-field": "{name:latin}",
-        "text-font": ["Noto Sans Bold"],
+        "text-font": ["Klokantech Noto Sans Bold"],
         "text-max-width": 6.25,
         "text-size": {"stops": [[2, 11], [5, 17]]},
         "text-transform": "uppercase",
@@ -2519,7 +2519,7 @@
       ],
       "layout": {
         "text-field": "{name:latin}",
-        "text-font": ["Noto Sans Bold"],
+        "text-font": ["Klokantech Noto Sans Bold"],
         "text-max-width": 6.25,
         "text-size": {"stops": [[1, 11], [4, 17]]},
         "text-transform": "uppercase",
@@ -2542,7 +2542,7 @@
       "filter": ["==", "class", "continent"],
       "layout": {
         "text-field": "{name:latin}",
-        "text-font": ["Noto Sans Bold"],
+        "text-font": ["Klokantech Noto Sans Bold"],
         "text-max-width": 6.25,
         "text-size": 14,
         "text-transform": "uppercase",
