@@ -2233,7 +2233,7 @@
       "minzoom": 7,
       "filter": [
         "all",
-        ["<=", "ref_length", 6],
+        ["<", "ref_length", 6],
         ["==", "$type", "LineString"],
         ["in", "network", "us-interstate"]
       ],
