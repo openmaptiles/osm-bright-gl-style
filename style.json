@@ -2572,6 +2572,29 @@
         "text-halo-color": "rgba(255,255,255,0.8)",
         "text-halo-width": 2
       }
+    },
+    {
+      "id": "building-name",
+      "type": "symbol",
+      "metadata": {"mapbox:group": "1444849364238.8171"},
+      "source": "openmaptiles",
+      "source-layer": "building",
+      "minzoom": 15,
+      "filter": ["has", "name"],
+      "layout": {
+        "text-field": "{name}",
+        "text-font": ["Noto Sans Regular"],
+        "text-max-width": 8,
+        "text-padding": 2,
+        "text-size": {"base": 1, "stops": [[15, 10], [20, 14]]},
+        "visibility": "visible"
+      },
+      "paint": {
+        "text-color": "#4d4d4d",
+        "text-halo-blur": 0.5,
+        "text-halo-color": "#ffffff",
+        "text-halo-width": 1
+      }
     }
   ],
   "id": "bright"
